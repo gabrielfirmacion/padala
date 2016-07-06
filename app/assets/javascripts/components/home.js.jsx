@@ -3,7 +3,7 @@ var Home = React.createClass({
     return (
       <div id='container'>
         <Header />
-        <h1>{this.props.data.email}</h1>
+        <Form />
       </div>
     )
   }
