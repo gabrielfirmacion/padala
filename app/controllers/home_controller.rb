@@ -10,6 +10,10 @@ before_action :authenticate_user!
     @shipment = Shipment.new(shipment_params)
     @shipment.save
 
+    params[:items].each do |item|
+      item = Item.new(name: item[1]["name"], description: item[1]["description"], quantity: item[1]["quantity"], shipment_id: @shipment.id   )
+      item.save
+    end
     redirect_to '/'
   end
 
