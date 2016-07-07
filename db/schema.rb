@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20160705221810) do
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
+    t.string   "description"
     t.integer  "quantity"
     t.integer  "shipment_id"
     t.datetime "created_at",  null: false
