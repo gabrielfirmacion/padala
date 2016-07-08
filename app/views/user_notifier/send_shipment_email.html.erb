@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h3>Thank you for trusting us with your items. We assure you they will arrive safely in the Philippines</h3>
+    <h4>Here is your shipment confirmation:</h4>
+    <p>Address: <%= @shipment.address %><p>
+    <p>Special Requests: <%= @shipment.specialrequest %><p>
+
+    <% @shipment.items.each do |item| %>
+      <p>Item: <%= item.name %> | Description: <%= item.description %> | Qty: <%= item.quantity %> </p>
+    <% end %>
+
+    <p> If you have any questions, please do not hesitate to email us at gabrielfirmacion@gmail.com </p>
+  </body>
+</html>

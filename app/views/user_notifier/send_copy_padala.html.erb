@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h3>You have a new order by <%= @user.email %></h3>
+    <h4>Deliver to <%= @shipment.address %></h4>
+    <p>Special Requests: <%= @shipment.specialrequest %><p>
+
+    <% @shipment.items.each do |item| %>
+      <p>Item: <%= item.name %> | Description: <%= item.description %> | Qty: <%= item.quantity %> </p>
+    <% end %>
+  </body>
+</html>
