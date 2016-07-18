@@ -9,8 +9,10 @@ before_action :authenticate_user!
   def create
     @shipment = Shipment.new(shipment_params)
     @shipment.save
-
     create_items(@shipment)
+    UserNotifier.send_shipment_email(current_user, @shipment).deliver_now
+    UserNotifier.send_copy_padala(current_user, @shipment).deliver_now
+
     redirect_to '/'
   end
 

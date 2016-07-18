@@ -1,7 +1,7 @@
 var Home = React.createClass({
   render: function() {
     return (
-      <div id='container'>
+      <div id='formContainer'>
         <Header />
         <Form data={this.props.data} />
       </div>
